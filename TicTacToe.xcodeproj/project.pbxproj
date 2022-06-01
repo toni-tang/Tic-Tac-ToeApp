@@ -7,17 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A83B22672847E4310074830C /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B22662847E4310074830C /* GameViewModel.swift */; };
+		A83B22692847E83A0074830C /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B22682847E83A0074830C /* CustomViews.swift */; };
+		A83B226B2847E8940074830C /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83B226A2847E8940074830C /* Model.swift */; };
 		A85CFFBA282DDDE3006D1FE3 /* TicTacToeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85CFFB9282DDDE3006D1FE3 /* TicTacToeApp.swift */; };
-		A85CFFBC282DDDE3006D1FE3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85CFFBB282DDDE3006D1FE3 /* ContentView.swift */; };
+		A85CFFBC282DDDE3006D1FE3 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A85CFFBB282DDDE3006D1FE3 /* GameView.swift */; };
 		A85CFFBE282DDDE6006D1FE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85CFFBD282DDDE6006D1FE3 /* Assets.xcassets */; };
 		A85CFFC1282DDDE6006D1FE3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A85CFFC0282DDDE6006D1FE3 /* Preview Assets.xcassets */; };
 		A869189F2836E7EF0074D740 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A869189E2836E7EF0074D740 /* Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A83B22662847E4310074830C /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		A83B22682847E83A0074830C /* CustomViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		A83B226A2847E8940074830C /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		A85CFFB6282DDDE3006D1FE3 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A85CFFB9282DDDE3006D1FE3 /* TicTacToeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeApp.swift; sourceTree = "<group>"; };
-		A85CFFBB282DDDE3006D1FE3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A85CFFBB282DDDE3006D1FE3 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		A85CFFBD282DDDE6006D1FE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A85CFFC0282DDDE6006D1FE3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A869189E2836E7EF0074D740 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
@@ -55,7 +61,10 @@
 			children = (
 				A85CFFB9282DDDE3006D1FE3 /* TicTacToeApp.swift */,
 				A869189E2836E7EF0074D740 /* Alerts.swift */,
-				A85CFFBB282DDDE3006D1FE3 /* ContentView.swift */,
+				A83B22682847E83A0074830C /* CustomViews.swift */,
+				A83B226A2847E8940074830C /* Model.swift */,
+				A85CFFBB282DDDE3006D1FE3 /* GameView.swift */,
+				A83B22662847E4310074830C /* GameViewModel.swift */,
 				A85CFFBD282DDDE6006D1FE3 /* Assets.xcassets */,
 				A85CFFBF282DDDE6006D1FE3 /* Preview Content */,
 			);
@@ -140,7 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A85CFFBC282DDDE3006D1FE3 /* ContentView.swift in Sources */,
+				A83B22672847E4310074830C /* GameViewModel.swift in Sources */,
+				A85CFFBC282DDDE3006D1FE3 /* GameView.swift in Sources */,
+				A83B22692847E83A0074830C /* CustomViews.swift in Sources */,
+				A83B226B2847E8940074830C /* Model.swift in Sources */,
 				A869189F2836E7EF0074D740 /* Alerts.swift in Sources */,
 				A85CFFBA282DDDE3006D1FE3 /* TicTacToeApp.swift in Sources */,
 			);
