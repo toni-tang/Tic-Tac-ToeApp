@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  GameView.swift
 //  TicTacToe
 //
 //  Created by Tony Tang on 5/12/22.
