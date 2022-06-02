@@ -38,3 +38,23 @@ struct playerIndicatorView: View {
             .foregroundColor(.white)
     }
 }
+
+struct MenuButtonView: View {
+    
+    var buttonName: String
+    
+    var body: some View {
+        ZStack {
+            Text("")
+                .frame(width: 200, height: 100)
+                .background(.pink)
+                .cornerRadius(100)
+                .opacity(0.8)
+            Text(buttonName)
+                .frame(width: 200, height: 100)
+                .foregroundColor(.white)
+                .font(.system(size: 25, weight: .heavy))
+        }
+    }
+}
+
