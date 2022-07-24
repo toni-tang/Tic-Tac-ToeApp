@@ -55,7 +55,7 @@ struct GameView: View {
                     Text((viewModel.turn) ? "O's Turn" : "X's Turn")
                         .foregroundColor(.white)
                         .font(.system(size: 40, weight: .heavy))
-                        .padding([.bottom, .top], 70)
+                        .padding([.bottom, .top], 20)
                     
                     LazyVGrid(columns: viewModel.columns){
                         ForEach(0..<9) { i in
@@ -79,20 +79,46 @@ struct GameView: View {
                 }
             }
         }
-        .navigationBarHidden(true)
+        //.navigationBarHidden(true)
     }
 }
 
 struct SettingView: View {
+    @AppStorage("dark") private var dark: Bool = false
+    @AppStorage("hardMode") private var hardMode: Bool = false
+    @AppStorage("cpu") private var cpu: Bool = false
+    
     var body: some View {
         ZStack {
             BackgroundView()
             VStack {
-                Text("CPU or 2 Players")
-                Text("Select Difficulty")
-                Text("Make turns random")
-                Text("Dark Mode")
+                Toggle(isOn: $dark,
+                       label: {
+                        Text("Dark Mode")
+                            .foregroundColor(.white)
+                            .frame(width: 200, height: 50)
+                            .font(.system(size: 30, weight: .heavy))
+                })
+                .toggleStyle(SwitchToggleStyle(tint: .red))
+                Toggle(isOn: $hardMode,
+                       label: {
+                        Text("Hard Mode")
+                            .foregroundColor(.white)
+                            .frame(width: 200, height: 50)
+                            .font(.system(size: 30, weight: .heavy))
+                })
+                .toggleStyle(SwitchToggleStyle(tint: .red))
+                Toggle(isOn: $cpu,
+                       label: {
+                        Text("CPU")
+                            .foregroundColor(.white)
+                            .frame(width: 200, height: 50)
+                            .font(.system(size: 30, weight: .heavy))
+                })
+                .toggleStyle(SwitchToggleStyle(tint: .red))
+                Spacer()
             }
+            .padding(.horizontal, 50)
         }
     }
 }
