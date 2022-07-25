@@ -9,28 +9,20 @@ import SwiftUI
 
 struct MenuView: View {
     
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color(.white))]
-    }
-    
     var body: some View {
         NavigationView {
             ZStack{
                 BackgroundView()
-                    .navigationTitle(Text("Menu").foregroundColor(.white))
+                    .navigationTitle(Text("Menu"))
                     .navigationBarHidden(true)
                 VStack(spacing: 30) {
                     Text("Tic-Tac-Toe")
                         .frame(width: 300, height: 100)
-                        .foregroundColor(.white)
-                    
+                        .foregroundColor(Color("text"))
                         .font(.system(size: 50, weight: .heavy))
                         .padding([.bottom], 40)
                     NavigationLink(destination: GameView(), label: {
                         MenuButtonView(buttonName: "Play")
-                    })
-                    NavigationLink(destination: SettingView(), label: {
-                        MenuButtonView(buttonName: "Settings")
                     })
                     NavigationLink(destination: CreditView(), label: {
                         MenuButtonView(buttonName: "Credits")
@@ -39,7 +31,7 @@ struct MenuView: View {
                 .padding([.bottom], 10)
             }
         }
-        .accentColor(.white)
+        .accentColor(Color("text"))
     }
 }
 
@@ -53,7 +45,7 @@ struct GameView: View {
             GeometryReader { geometry in
                 VStack {
                     Text((viewModel.turn) ? "O's Turn" : "X's Turn")
-                        .foregroundColor(.white)
+                        .foregroundColor(Color("text"))
                         .font(.system(size: 40, weight: .heavy))
                         .padding([.bottom, .top], 20)
                     
@@ -79,47 +71,6 @@ struct GameView: View {
                 }
             }
         }
-        //.navigationBarHidden(true)
-    }
-}
-
-struct SettingView: View {
-    @AppStorage("dark") private var dark: Bool = false
-    @AppStorage("hardMode") private var hardMode: Bool = false
-    @AppStorage("cpu") private var cpu: Bool = false
-    
-    var body: some View {
-        ZStack {
-            BackgroundView()
-            VStack {
-                Toggle(isOn: $dark,
-                       label: {
-                        Text("Dark Mode")
-                            .foregroundColor(.white)
-                            .frame(width: 200, height: 50)
-                            .font(.system(size: 30, weight: .heavy))
-                })
-                .toggleStyle(SwitchToggleStyle(tint: .red))
-                Toggle(isOn: $hardMode,
-                       label: {
-                        Text("Hard Mode")
-                            .foregroundColor(.white)
-                            .frame(width: 200, height: 50)
-                            .font(.system(size: 30, weight: .heavy))
-                })
-                .toggleStyle(SwitchToggleStyle(tint: .red))
-                Toggle(isOn: $cpu,
-                       label: {
-                        Text("CPU")
-                            .foregroundColor(.white)
-                            .frame(width: 200, height: 50)
-                            .font(.system(size: 30, weight: .heavy))
-                })
-                .toggleStyle(SwitchToggleStyle(tint: .red))
-                Spacer()
-            }
-            .padding(.horizontal, 50)
-        }
     }
 }
 
@@ -129,7 +80,7 @@ struct CreditView: View {
             BackgroundView()
             VStack {
                 Text("MIT License \n\nCopyright (c) 2022 Tony \n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: \n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. \n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.")
-                    .foregroundColor(.white)
+                    .foregroundColor(Color("text"))
                     .frame(width: 300, height: 460)
                     .font(.system(size: 12, weight: .heavy))
                 Spacer()
@@ -141,6 +92,7 @@ struct CreditView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MenuView()
+        MenuView().preferredColorScheme(.light)
+        MenuView().preferredColorScheme(.dark)
     }
 }

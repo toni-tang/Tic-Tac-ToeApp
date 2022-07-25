@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BackgroundView: View {
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color("salmon"), Color("lightPink")]), startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(gradient: Gradient(colors: [Color("primary"), Color("secondary")]), startPoint: .topLeading, endPoint: .bottomTrailing)
             .ignoresSafeArea(.all)
     }
 }
@@ -20,7 +20,7 @@ struct GameSquareView: View {
     
     var body: some View {
         Circle()
-            .foregroundColor(.pink)
+            .foregroundColor(Color("boxes"))
             .opacity(0.8)
             .frame(width: proxy.size.width/3 - 15,
                    height: proxy.size.width/3 - 15)
@@ -35,7 +35,7 @@ struct playerIndicatorView: View {
         Image(systemName: systemImageName)
             .resizable()
             .frame(width: 40, height: 40)
-            .foregroundColor(.white)
+            .foregroundColor(Color("text"))
     }
 }
 
@@ -47,12 +47,12 @@ struct MenuButtonView: View {
         ZStack {
             Text("")
                 .frame(width: 200, height: 100)
-                .background(.pink)
+                .background(Color("boxes"))
                 .cornerRadius(100)
                 .opacity(0.8)
             Text(buttonName)
                 .frame(width: 200, height: 100)
-                .foregroundColor(.white)
+                .foregroundColor(Color("text"))
                 .font(.system(size: 25, weight: .heavy))
         }
     }
